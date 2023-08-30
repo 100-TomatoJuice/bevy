@@ -174,7 +174,7 @@ impl<'w> DynamicSceneBuilder<'w> {
     ///
     /// To make sure the dynamic scene doesn't contain entities without any components, call
     /// [`Self::remove_empty_entities`] before building the scene.
-    pub fn build(self) -> DynamicScene {
+    pub fn build(&mut self) -> DynamicScene {
         DynamicScene {
             resources: self.extracted_resources.into_values().collect(),
             entities: self.extracted_scene.into_values().collect(),
